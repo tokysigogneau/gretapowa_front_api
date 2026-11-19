@@ -1,0 +1,17 @@
+<!-- src/app/all-events/all-events.html -->
+<div class="events-container">
+  <h2>All Events</h2>
+
+  <div class="events-grid">
+    @for (event of events(); track event.id) {
+      <div class="event-card">
+        <h3>{{ event.name }}</h3>
+        <p><strong>Date:</strong> {{ event.date | date: 'medium' }}</p>
+        <p><strong>Location:</strong> {{ event.location }}</p>
+        <p>{{ event.details }}</p>
+      </div>
+    } @empty {
+      <p class="empty-message">No events found.</p>
+    }
+  </div>
+</div>
